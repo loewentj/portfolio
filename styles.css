@@ -12,7 +12,9 @@
     --heading-font: 'Montserrat';
     --content-font: 'Raleway';
 }
-
+Body {
+Overflow:hidden;
+} 
 a {
     text-decoration: none;
     color: #292D2D;
