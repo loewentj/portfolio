@@ -1,0 +1,186 @@
+/* ----- reset Defaults -------  */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* utility Variables colors and fonts */
+
+:root {
+    --heading-font: 'Montserrat';
+    --content-font: 'Raleway';
+}
+
+a {
+    text-decoration: none;
+    color: #292D2D;
+    cursor: pointer;
+}
+
+/* Headings */
+
+h1 {
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+}
+
+h3, h5 {
+    font-family: var(--content-font);
+}
+
+/*  header components */
+
+header {
+    align-items: center;
+    background: rgb(0, 212, 255);
+    background: linear-gradient(90deg, rgba(0, 212, 255, 1) 0%, rgba(12, 110, 130, 1) 100%, rgba(0, 212, 255, 1) 100%);
+    color: #ffffff;
+    display: flex;
+    height: 25vh;
+    justify-content: space-between;
+    text-align: center;
+    width: 100vw;
+}
+
+header img {
+    height: auto;
+    width: 100px;
+}
+
+header a img:hover {
+    animation: logo-spin 2s linear forwards;
+}
+
+header #brand {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+/*showcase components */
+
+#showcase::before {
+    content: "";
+    background: url("showcase.jpg") no-repeat center/cover;
+    filter: grayscale(90%);
+    opacity: 0.3;
+    position: absolute;
+    height: 200vh;
+    width: 100vw;
+}
+
+/* Article components Featured Work */
+
+#showcase {
+    justify-content: center;
+    align-content: center;
+    z-index: 2;
+    height: 200vh;
+    width: 100vw;
+}
+
+#showcase h3 {
+    color: #292D2D;
+    grid-column: 1 / 4;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#showcase #portfolio-gallery {
+    display: grid;
+    grid-auto-rows: minmax(16.8vh, auto);
+    grid-auto-columns: 1fr;
+    grid-gap: 1px;
+    grid-column: 1 / 4;
+    justify-content: center;
+}
+
+#showcase #portfolio-gallery img {
+    /* margin-bottom: 1rem; */
+    z-index: -10;
+    opacity: 0.7;
+}
+
+figcaption {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#showcase #portfolio-gallery .caption-heading {
+    color: #A8247D;
+    font-size: 1.5rem;
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* footer components */
+
+footer {
+    align-items: center;
+    background: rgb(0, 212, 255);
+    background: linear-gradient(90deg, rgba(0, 212, 255, 1) 0%, rgba(12, 110, 130, 1) 100%, rgba(0, 212, 255, 1) 100%);
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+    /*animation components for logo-spin */
+    @keyframes logo-spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        50% {
+            border-radius: 50%;
+        }
+        100% {
+            transform: rotate(360deg);
+            border-radius: 100%;
+        }
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+        header img {
+            height: auto;
+            width: 200px;
+        }
+        #showcase {
+            justify-content: center;
+            align-content: center;
+            z-index: 2;
+        }
+        #showcase #portfolio-gallery {
+            grid-auto-columns: minmax(100px, auto);
+            grid-auto-rows: minmax(5vh, auto);
+            margin-bottom: 1rem;
+        }
+        #showcase #portfolio-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #showcase #portfolio-gallery .frogs {
+            grid-column-start: 2;
+            grid-column-end: 6;
+            grid-row-start: 1;
+            grid-row-end: 4;
+        }
+        #showcase #portfolio-gallery .space {
+            grid-column-start: 6;
+            grid-column-end: 11;
+            grid-row-start: 1;
+            grid-row-end: 4;
+        }
+        #showcase #portfolio-gallery .water {
+            grid-column-start: 3;
+            grid-column-end: 11;
+            grid-row-start: 4;
+            grid-row-end: 7;
+        }
+        footer {
+            grid-row-start: 10;
+            grid-row-end: 11;
+        }
+    }
+}
